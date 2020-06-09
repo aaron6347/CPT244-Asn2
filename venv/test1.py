@@ -24,4 +24,6 @@ df = pd.read_csv('SupExaAssign.csv', sep=',')
 SupExaAssign = numpy.matrix(df)
 print(SupExaAssign)
 
+Models
+
 # SupExaAssign -> staff_unavailability -> compute all possible time for them -> (all-timeslot - staff_unavailability)

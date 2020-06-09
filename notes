@@ -1,0 +1,24 @@
+
+implement elitist reproduction, Bernoulli crossover, immigration, and post-tournament selection rather than traditional
+methods/operators
+
+
+        # a 3 x 118 matrix where three rows are professor list, timeslot, and room id, room id can be ignored since all the
+        # rooms are defined by their number.
+        chromosome = [staff_to_presentation, []]
+        i = 0
+        while not len(chromosome[1]) == 118:
+            presentation = chromosome[0][i]
+            slot = rand.randint(0, 299)
+            for j in presentation.staff:
+                free_staff = False
+                if not slot in unavailable_staff[j - 1]:
+                    free_staff = True
+                else:
+                    continue
+            if free_staff and not slot in unavailable_timeslot:
+                chromosome[1].append(slot)
+                unavailable_timeslot.append(slot)
+                i += 1
+            else:
+                continue
