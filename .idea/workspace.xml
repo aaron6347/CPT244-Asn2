@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8823ac48-0037-4e76-93db-b524eb61eca8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/HC03.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/HC04.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/SC01.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/SC02.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/SC03.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/SupExaAssign.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +173,7 @@
       <workItem from="1591334234236" duration="4344000" />
       <workItem from="1591417460996" duration="12867000" />
       <workItem from="1591602819939" duration="25796000" />
+      <workItem from="1591678956527" duration="1790000" />
     </task>
     <servers />
   </component>
@@ -209,25 +201,25 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1591338934582" />
-    <state width="1323" height="287" key="GridCell.Tab.0.bottom" timestamp="1591647115613">
+    <state width="1323" height="245" key="GridCell.Tab.0.bottom" timestamp="1591680846524">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="287" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1591647115613" />
+    <state width="1323" height="245" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1591680846524" />
     <state width="1492" height="266" key="GridCell.Tab.0.bottom/0.40.1536.824@0.40.1536.824" timestamp="1590595201087" />
-    <state width="1323" height="287" key="GridCell.Tab.0.center" timestamp="1591647115613">
+    <state width="1323" height="245" key="GridCell.Tab.0.center" timestamp="1591680846524">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="287" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1591647115613" />
+    <state width="1323" height="245" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1591680846524" />
     <state width="1492" height="266" key="GridCell.Tab.0.center/0.40.1536.824@0.40.1536.824" timestamp="1590595201087" />
-    <state width="1323" height="287" key="GridCell.Tab.0.left" timestamp="1591647115613">
+    <state width="1323" height="245" key="GridCell.Tab.0.left" timestamp="1591680846524">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="287" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1591647115613" />
+    <state width="1323" height="245" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1591680846524" />
     <state width="1492" height="266" key="GridCell.Tab.0.left/0.40.1536.824@0.40.1536.824" timestamp="1590595201087" />
-    <state width="1323" height="287" key="GridCell.Tab.0.right" timestamp="1591647115613">
+    <state width="1323" height="245" key="GridCell.Tab.0.right" timestamp="1591680846524">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="287" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1591647115613" />
+    <state width="1323" height="245" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1591680846524" />
     <state width="1492" height="266" key="GridCell.Tab.0.right/0.40.1536.824@0.40.1536.824" timestamp="1590595201087" />
     <state width="1323" height="287" key="GridCell.Tab.1.bottom" timestamp="1591647115614">
       <screen x="0" y="0" width="1366" height="768" />
@@ -249,10 +241,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="691" height="392" key="XDebugger.FullValuePopup/0.0.1366.768@0.0.1366.768" timestamp="1591628892903" />
-    <state x="359" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1591417596399">
+    <state x="359" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1591678976372">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="359" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1591417596399" />
+    <state x="359" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1591678976372" />
     <state x="346" y="89" key="search.everywhere.popup" timestamp="1591645443386">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -260,6 +252,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CPT244_Asn2$main.coverage" NAME="main Coverage Results" MODIFIED="1591343908928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Class-Scheduling" />
-    <SUITE FILE_PATH="coverage/CPT244_Asn2$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1591647003675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/CPT244_Asn2$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1591680846513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
   </component>
 </project>

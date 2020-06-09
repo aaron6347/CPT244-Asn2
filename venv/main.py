@@ -49,7 +49,11 @@ def initialize_population(size):
         # una_slots = list(unavailable_timeslot)
         for present in staff_to_presentation:
             slot = rand.randint(0, 299)
-            while slot in booked_slots:
+            free = True
+            staff_slots = []
+            for staff in present.staff:
+                staff_slots = staff_slots + unavailable_staff[staff - 1]
+            while slot in staff_slots or slot in booked_slots or slot in unavailable_timeslot:
                 slot = rand.randint(0, 299)
 
             booked_slots.append(slot)
@@ -122,11 +126,13 @@ def genetic_algorithm():
         print(evaluate(pop))
     print("\n------------- Genetic Algorithm --------------\n")
     population.sort(key=evaluate)
+    for pop in population:
+        print(evaluate(pop))
 
 
     while True:
         # if termination criteria are satisfied, stop.
-        if evaluate(max(population, key=evaluate)) == 1 or generation == 500:
+        if evaluate(max(population, key=evaluate)) == 0 or generation == 500:
             print("Generations:", generation)
             print("Best Chromosome fitness value", evaluate(max(population, key=evaluate)))
             print("Best Chromosome: ", max(population, key=evaluate))
