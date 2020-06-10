@@ -16,8 +16,13 @@ class Academic_Staff:
         return "Academic Staff: " + self.name
 
 
+class IterablePresentation(type):
+    def __iter__(cls):
+        return iter(cls.__name__)
+
+
 # Presentation class
-class Presentation:
+class Presentation(metaclass=IterablePresentation):
     presentation = None
 
     def __init__(self, name, staff):

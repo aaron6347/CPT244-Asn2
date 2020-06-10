@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8823ac48-0037-4e76-93db-b524eb61eca8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +24,9 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CPT244-Asn2" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,7 +55,7 @@
       <recent name="C:\Users\IQrar Amin\OneDrive - Universiti Sains Malaysia\Software and Programs\Programs\Python\CPT244-Asn2\venv" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="CPT244-Asn2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,13 +78,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CPT244-Asn2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="C:\Python\Python38\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -89,51 +90,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/main.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CPT244-Asn2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python\Python38\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Class-Scheduling" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Class-Scheduling/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CPT244-Asn2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/test1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -142,9 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +128,10 @@
       <workItem from="1591334234236" duration="4344000" />
       <workItem from="1591417460996" duration="12867000" />
       <workItem from="1591602819939" duration="25796000" />
-      <workItem from="1591678956527" duration="1790000" />
+      <workItem from="1591678956527" duration="17268000" />
+      <workItem from="1591726582281" duration="4263000" />
+      <workItem from="1591770466406" duration="22591000" />
+      <workItem from="1591813048826" duration="3626000" />
     </task>
     <servers />
   </component>
@@ -181,14 +139,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591713237433">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1591713237433" />
     <state x="453" y="174" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591334625999">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="453" y="174" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1591334625999" />
-    <state x="397" y="0" key="#main" timestamp="1591338976977">
+    <state x="397" y="0" key="#main" timestamp="1591713243421">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="397" y="0" key="#main/0.0.1366.768@0.0.1366.768" timestamp="1591338976977" />
+    <state x="397" y="0" key="#main/0.0.1366.768@0.0.1366.768" timestamp="1591713243421" />
     <state x="397" y="0" key="#main_(1)" timestamp="1591419069332">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -201,57 +163,57 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1591338934582" />
-    <state width="1323" height="245" key="GridCell.Tab.0.bottom" timestamp="1591680846524">
+    <state width="1323" height="373" key="GridCell.Tab.0.bottom" timestamp="1591805059701">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="245" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1591680846524" />
+    <state width="1323" height="373" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1591805059701" />
     <state width="1492" height="266" key="GridCell.Tab.0.bottom/0.40.1536.824@0.40.1536.824" timestamp="1590595201087" />
-    <state width="1323" height="245" key="GridCell.Tab.0.center" timestamp="1591680846524">
+    <state width="1323" height="373" key="GridCell.Tab.0.center" timestamp="1591805059701">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="245" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1591680846524" />
+    <state width="1323" height="373" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1591805059701" />
     <state width="1492" height="266" key="GridCell.Tab.0.center/0.40.1536.824@0.40.1536.824" timestamp="1590595201087" />
-    <state width="1323" height="245" key="GridCell.Tab.0.left" timestamp="1591680846524">
+    <state width="1323" height="373" key="GridCell.Tab.0.left" timestamp="1591805059701">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="245" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1591680846524" />
+    <state width="1323" height="373" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1591805059701" />
     <state width="1492" height="266" key="GridCell.Tab.0.left/0.40.1536.824@0.40.1536.824" timestamp="1590595201087" />
-    <state width="1323" height="245" key="GridCell.Tab.0.right" timestamp="1591680846524">
+    <state width="1323" height="373" key="GridCell.Tab.0.right" timestamp="1591805059701">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="245" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1591680846524" />
+    <state width="1323" height="373" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1591805059701" />
     <state width="1492" height="266" key="GridCell.Tab.0.right/0.40.1536.824@0.40.1536.824" timestamp="1590595201087" />
-    <state width="1323" height="287" key="GridCell.Tab.1.bottom" timestamp="1591647115614">
+    <state width="1323" height="373" key="GridCell.Tab.1.bottom" timestamp="1591805059701">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="287" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1591647115614" />
-    <state width="1323" height="287" key="GridCell.Tab.1.center" timestamp="1591647115614">
+    <state width="1323" height="373" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1591805059701" />
+    <state width="1323" height="373" key="GridCell.Tab.1.center" timestamp="1591805059701">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="287" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1591647115614" />
-    <state width="1323" height="287" key="GridCell.Tab.1.left" timestamp="1591647115613">
+    <state width="1323" height="373" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1591805059701" />
+    <state width="1323" height="373" key="GridCell.Tab.1.left" timestamp="1591805059701">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="287" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1591647115613" />
-    <state width="1323" height="287" key="GridCell.Tab.1.right" timestamp="1591647115614">
+    <state width="1323" height="373" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1591805059701" />
+    <state width="1323" height="373" key="GridCell.Tab.1.right" timestamp="1591805059701">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="287" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1591647115614" />
-    <state width="691" height="392" key="XDebugger.FullValuePopup" timestamp="1591628892903">
+    <state width="1323" height="373" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1591805059701" />
+    <state width="691" height="392" key="XDebugger.FullValuePopup" timestamp="1591802549502">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="691" height="392" key="XDebugger.FullValuePopup/0.0.1366.768@0.0.1366.768" timestamp="1591628892903" />
-    <state x="359" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1591678976372">
+    <state width="691" height="392" key="XDebugger.FullValuePopup/0.0.1366.768@0.0.1366.768" timestamp="1591802549502" />
+    <state x="359" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1591813049790">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="359" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1591678976372" />
+    <state x="359" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1591813049790" />
     <state x="346" y="89" key="search.everywhere.popup" timestamp="1591645443386">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="346" y="89" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1591645443386" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CPT244_Asn2$main.coverage" NAME="main Coverage Results" MODIFIED="1591343908928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Class-Scheduling" />
-    <SUITE FILE_PATH="coverage/CPT244_Asn2$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1591680846513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/CPT244_Asn2$main.coverage" NAME="main Coverage Results" MODIFIED="1591803363968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/CPT244_Asn2$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1591694410453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
   </component>
 </project>
