@@ -37,7 +37,6 @@ with open('data/HC04.csv', 'r') as file:
 
 def initialize_population(size):
     """generate population function"""
-    global staff_to_presentation, unavailable_staff, unavailable_timeslot
     population = []
     for i in range(size):
         chromosome = []
@@ -86,7 +85,6 @@ def selection(population_score):
     """select 2 parents chromosome function"""
     selectionlist = population_score[:]    #shallow copy
     random.shuffle(selectionlist)   #shuffle the selection
-    print('selectionlist after shuffle', selectionlist)
     result = () #to store chosen parents chromosome
     for _ in range(2):  #2 times traverse to choose 2 parents
         c1, val1 = selectionlist.pop()  #parent chromosome 1st candidate
@@ -156,17 +154,19 @@ def crossover(parent1_ind, parent2_ind, population):
     return result1, result2
 
 def mutation(chromosome):
+    """mutation 2 parents/childs chromosome function"""
     existed_timeslot = [x[1] for x in chromosome]
-    randomable_timeslot = [x for x in range(1, 301) if x not in existed_timeslot]
+    randomable_timeslot = [x for x in range(1, 301) if x not in (existed_timeslot or unavailable_timeslot)]
+    randomable_timeslot = [x for x in range(1, 301) if x not in (existed_timeslot or unavailable_timeslot)]
     # print(randomable_timeslot)
     index = random.randint(0, len(chromosome) - 1)
     staff_timeslot = []
     for staff in chromosome[index][0].staff:
         staff_timeslot += unavailable_staff[staff - 1]
     # print(staff_timeslot)
-    for x in staff_timeslot:
-        if x in randomable_timeslot:
-            randomable_timeslot.remove(x)
+    for timeslot in staff_timeslot:
+        if timeslot in randomable_timeslot:
+            randomable_timeslot.remove(timeslot)
     # print('after remove ', randomable_timeslot)
     chromosome[index][1] = random.choice(randomable_timeslot)
 
@@ -180,7 +180,8 @@ def genetic_algorithm():
 
     # generation phase
     # while generation < 50:
-    while generation < 500:
+    while generation < 10:
+
         # evaluation process
         population_score = evaluate(population)  # evaluate population by giving each chromosome a score
         print("original population score", population_score)
@@ -191,12 +192,11 @@ def genetic_algorithm():
         # print(parent_population)
 
         # genetic process
-        crossover_prob = mutation_prob = 0
+        # crossover_prob = mutation_prob = 0
+        child_population = parent_population    #assign parent as child
         if random.uniform(0, 1) >= crossover_prob:  #probability having crossover then crossover
             child_population = crossover(parent1_ind-1, parent2_ind-1, population)
         if random.uniform(0, 1) >= mutation_prob:   #probability having mutation then mutation happen
-            if not child_population:    #if crossover didnt happen before in this generation then create a child population
-                child_population = parent_population
             mutation(child_population[0])
             mutation(child_population[1])
 
@@ -204,18 +204,26 @@ def genetic_algorithm():
         parent_score = evaluate(parent_population)
         child_score = evaluate(child_population)
 
-        print(parent_score)
-        print(child_score)
-        parent_ind = 0
-        for ind, chromosome in enumerate(child_score):
-            _, child_score = chromosome
-            if child_score < parent_score[parent_ind][1]:
-                if parent_ind:
-                    population[parent2_ind-1] = child_population[ind]
-                else:
-                    population[parent1_ind-1] = child_population[ind]
-                parent_ind += 1
-
+        print('parent', parent_score)
+        print('child', child_score)
+        better_population, better_score = parent_population, parent_score   #assign parent as the best 2 result first
+        if better_score[0][1] > better_score[1][1]:   #arrange better score in ascending order
+            print('arrangement happen', better_score[0][1], better_score[1][1])
+            better_population = [parent_population[1], parent_population[0]]
+            better_score = [parent_score[1], parent_score[0]]
+        for ind1, score in child_score: #traver and check each child
+            for ind2, better in enumerate(better_score):    #traverse and check each current result
+                _, score2 = better
+                if score < score2:  #if child penalty score is lower than current result score then change the score
+                    better_population.insert(ind2, child_population[ind1-1])
+                    better_score.insert(ind2, (ind1, score))
+                    better_population.pop()
+                    better_score.pop()
+                    print('changed', better_score)
+                    break
+        print('ending better', better_score)
+        population[parent1_ind-1] = better_population[0]
+        population[parent2_ind-1] = better_population[1]
         population_score = evaluate(population)
         print(population_score)
 
@@ -229,7 +237,6 @@ def genetic_algorithm():
         #         population_score[max_ind - 1] = (max_ind, child_score[child_ind][1])
         # print('new population', population_score)
 
-        child_population = None #destroy child_population before next generation
         generation += 1
     print(min(population_score, key=lambda tup: tup[1]))
 genetic_algorithm()
