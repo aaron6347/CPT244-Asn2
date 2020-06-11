@@ -13,4 +13,15 @@ print(min(a, key=lambda tup: tup[1]))
 
 a = random.choice((0,1))
 for x in range(10):
-    print(random.choice((0,1)))
+    print(random.choice((0, 1)))
+
+a = 0
+while a < 10:
+    if random.uniform(0, 1) > 0.5:
+        aa = 10
+        aa += 1
+    if random.uniform(0, 1) > 0.1:
+        ya = aa
+        print(ya, aa)
+    aa = None
+    a += 1
