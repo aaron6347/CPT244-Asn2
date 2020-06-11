@@ -1,5 +1,5 @@
 """test1.py
-    Created by Aaron at 27-May-20"""
+    Created by Aaron at 01-Jun-20"""
 import pprint
 import numpy
 import pandas as pd
@@ -23,7 +23,5 @@ for x in unavailable_timeslot:
 df = pd.read_csv('SupExaAssign.csv', sep=',')
 SupExaAssign = numpy.matrix(df)
 print(SupExaAssign)
-
-Models
 
 # SupExaAssign -> staff_unavailability -> compute all possible time for them -> (all-timeslot - staff_unavailability)

@@ -1,3 +1,5 @@
+"""Models.py
+    Created by Aaron at 09-Jun-20"""
 # Academic Staff class
 class Academic_Staff:
     academic_staff = None
@@ -5,24 +7,19 @@ class Academic_Staff:
     def __init__(self, name):
         self.name = name
 
-    @staticmethod
-    def search(name):
-        for i in range(len(Professor.professors)):
-            if Professor.professors[i].name == name:
-                return i
-        return -1
+    # @staticmethod
+    # def search(name):
+    #     for i in range(len(Professor.professors)):
+    #         if Professor.professors[i].name == name:
+    #             return i
+    #     return -1
 
     def __repr__(self):
         return "Academic Staff: " + self.name
 
 
-class IterablePresentation(type):
-    def __iter__(cls):
-        return iter(cls.__name__)
-
-
 # Presentation class
-class Presentation(metaclass=IterablePresentation):
+class Presentation:
     presentation = None
 
     def __init__(self, name, staff):
