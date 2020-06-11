@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7c6bb69-429c-43ef-95ae-0a430e213b05" name="Default Changelist" comment="" />
+    <list default="true" id="8823ac48-0037-4e76-93db-b524eb61eca8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/CPT244_Asn2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CPT244_Asn2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/testing2.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/testing2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/testing3.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/testing3.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CPT244-Asn2" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -13,6 +22,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ciZHMvc1hM8MJFlcm8DH8HWB2W" />
   <component name="ProjectViewState">
@@ -23,14 +35,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Aaron\PycharmProjects\CPT244_Asn2\venv" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.testing3">
+  <component name="RunManager" selected="Python.testing2">
     <configuration name="Models" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CPT244_Asn2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -43,7 +55,30 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/Models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="CPT244_Asn2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -64,6 +99,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -85,6 +121,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -106,6 +143,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/testing2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -127,6 +165,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/testing3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -145,8 +184,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testing3" />
         <item itemvalue="Python.testing2" />
+        <item itemvalue="Python.testing3" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.Models" />
@@ -191,25 +230,30 @@
       <screen x="0" y="40" width="1536" height="824" />
     </state>
     <state x="549" y="207" key="FileChooserDialogImpl/0.40.1536.824@0.40.1536.824" timestamp="1591711581322" />
-    <state width="1492" height="304" key="GridCell.Tab.0.bottom" timestamp="1591858197863">
-      <screen x="0" y="40" width="1536" height="824" />
+    <state width="1323" height="526" key="GridCell.Tab.0.bottom" timestamp="1591861142133">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state width="1323" height="526" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1591861142133" />
     <state width="1492" height="304" key="GridCell.Tab.0.bottom/0.40.1536.824@0.40.1536.824" timestamp="1591858197863" />
-    <state width="1492" height="304" key="GridCell.Tab.0.center" timestamp="1591858197863">
-      <screen x="0" y="40" width="1536" height="824" />
+    <state width="1323" height="526" key="GridCell.Tab.0.center" timestamp="1591861142133">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state width="1323" height="526" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1591861142133" />
     <state width="1492" height="304" key="GridCell.Tab.0.center/0.40.1536.824@0.40.1536.824" timestamp="1591858197863" />
-    <state width="1492" height="304" key="GridCell.Tab.0.left" timestamp="1591858197862">
-      <screen x="0" y="40" width="1536" height="824" />
+    <state width="1323" height="526" key="GridCell.Tab.0.left" timestamp="1591861142133">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state width="1323" height="526" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1591861142133" />
     <state width="1492" height="304" key="GridCell.Tab.0.left/0.40.1536.824@0.40.1536.824" timestamp="1591858197862" />
-    <state width="1492" height="304" key="GridCell.Tab.0.right" timestamp="1591858197863">
-      <screen x="0" y="40" width="1536" height="824" />
+    <state width="1323" height="526" key="GridCell.Tab.0.right" timestamp="1591861142133">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state width="1323" height="526" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1591861142133" />
     <state width="1492" height="304" key="GridCell.Tab.0.right/0.40.1536.824@0.40.1536.824" timestamp="1591858197863" />
-    <state x="277" y="94" key="SettingsEditor" timestamp="1591857532179">
-      <screen x="0" y="40" width="1536" height="824" />
+    <state x="246" y="50" key="SettingsEditor" timestamp="1591859172808">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="246" y="50" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1591859172808" />
     <state x="277" y="94" key="SettingsEditor/0.40.1536.824@0.40.1536.824" timestamp="1591857532179" />
     <state x="93" y="133" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591713460006">
       <screen x="0" y="40" width="1536" height="824" />
@@ -219,5 +263,11 @@
       <screen x="0" y="40" width="1536" height="824" />
     </state>
     <state x="444" y="276" key="com.intellij.ide.util.TipDialog/0.40.1536.824@0.40.1536.824" timestamp="1591836078317" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CPT244_Asn2$testing2.coverage" NAME="testing2 Coverage Results" MODIFIED="1591861142121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/CPT244_Asn2$main.coverage" NAME="main Coverage Results" MODIFIED="1591803363968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/CPT244_Asn2$testing3.coverage" NAME="testing3 Coverage Results" MODIFIED="1591860911117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/CPT244_Asn2$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1591694410453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
   </component>
 </project>
