@@ -35,7 +35,6 @@ with open('data/HC04.csv', 'r') as file:
     for row in reader:
         unavailable_staff.append([int(x) for x in row if str(x).isnumeric()])
 
-
 def initialize_population(size):
     """generate population function"""
     global staff_to_presentation, unavailable_staff, unavailable_timeslot
@@ -54,7 +53,6 @@ def initialize_population(size):
 
     return population
 
-
 def check_venue_availability(chromosome):
     """compare selected timeslot with venue unavailability function"""
     score = 0
@@ -63,7 +61,6 @@ def check_venue_availability(chromosome):
         if timeslot in unavailable_timeslot:    #if current selected timeslot clash with venue unavailability then give penalty
             score += 1000
     return score
-
 
 def check_staff_availability(chromosome):
     """compare selected timeslot with group's staffs unavailability function"""
@@ -75,7 +72,6 @@ def check_staff_availability(chromosome):
                 score += 1000
     return score
 
-
 def evaluate(population):
     """evaluate population function"""
     result = [] #store all chromosome's score
@@ -85,7 +81,6 @@ def evaluate(population):
         score += check_staff_availability(population[x])    #check current selected timeslot with staff unavailability
         result.append((x+1, score))
     return result
-
 
 def selection(population_score):
     """select 2 parents chromosome function"""
@@ -100,74 +95,115 @@ def selection(population_score):
     print(result)
     return result
 
-
 def crossover(parent1_ind, parent2_ind, population):
     """crossover 2 parents chromosome function"""
-    return [population[parent1_ind][:59]+population[parent2_ind][59:], population[parent2_ind][:59]+population[parent1_ind][59:]]
+    child1, child2 = [], []
+    reservoir1, reservoir2 = [], []
+    for x in range(118):
+        choice = random.choice((0,1))
+        _, timeslot1 = population[parent1_ind][x]
+        _, timeslot2 = population[parent2_ind][x]
+        if choice:
+            if timeslot2 not in child1:
+                child1.append(timeslot2)
+            else:
+                child1.append(0)
+                reservoir1.append(timeslot2)
+            if timeslot1 not in child2:
+                child2.append(timeslot1)
+            else:
+                child2.append(0)
+                reservoir2.append(timeslot1)
+        else:
+            if timeslot1 not in child1:
+                child1.append(timeslot1)
+            else:
+                child1.append(0)
+                reservoir1.append(timeslot1)
+            if timeslot2 not in child2:
+                child2.append(timeslot2)
+            else:
+                child2.append(0)
+                reservoir2.append(timeslot2)
+    # print(sorted(child1))
+    # print(sorted(child2))
+    non_existed = [x for x in range(1,301) if x not in set(child1+child2)]
+    # print(len(non_existed), sorted(non_existed))
+    for ind in range(118):
+        if child1[ind] == 0:
+            if len(reservoir2) != 0:
+                child1[ind] = reservoir2[0]
+                del reservoir2 [0]
+            else:
+                child1[ind] = random.choice(non_existed)
+                non_existed.remove(child1[ind])
+        if child2[ind] == 0:
+            if len(reservoir1) != 0:
+                child2[ind] = reservoir1[0]
+                del reservoir1 [0]
+            else:
+                child2[ind] = random.choice(non_existed)
+                non_existed.remove(child2[ind])
 
+    result1, result2 = [], []
+    for x in range(118):
+        result1.append([population[parent1_ind][x][0], child1[x]])
+        result2.append([population[parent1_ind][x][0], child2[x]])
+    # print(child1)
+    # print(child2)
+    print('res1', result1)
+    print('res2', result2)
+    return result1, result2
 
-def mutate(chromosome):
-    global unavailable_staff, unavailable_timeslot
-
-    booked_slots = [x[1] for x in chromosome]
-    print(booked_slots)
-    print(len(set(booked_slots)))
-    ranslots = [x for x in list(range(1, 300)) if x not in set(booked_slots)]
-    print(ranslots)
+def mutation(chromosome):
+    existed_timeslot = [x[1] for x in chromosome]
+    randomable_timeslot = [x for x in range(1, 301) if x not in existed_timeslot]
+    print(randomable_timeslot)
     index = random.randint(0, len(chromosome) - 1)
-    random.shuffle(ranslots)
-    ran_slot = ranslots.pop()
-    staff_slots = []
-    # booked_timeslots = [x[1] for x in chromosome]
+    staff_timeslot = []
     for staff in chromosome[index][0].staff:
-        staff_slots = staff_slots + unavailable_staff[staff - 1]
-    while ran_slot in staff_slots or ran_slot in unavailable_timeslot:
-        ran_slot = ranslots.pop()
-
-    chromosome[index][1] = ran_slot
-
+        staff_timeslot += unavailable_staff[staff - 1]
+    print(staff_timeslot)
+    for x in staff_timeslot:
+        if x in randomable_timeslot:
+            randomable_timeslot.remove(x)
+    print('after remove ', randomable_timeslot)
+    chromosome[index][1] = random.choice(randomable_timeslot)
 
 def genetic_algorithm():
     """run genetic algorithm function"""
     # initialization phase
     generation = 0  #initialize generation
-    crossover_prob, mutation_prob = 0.8, 0.5       # initialize probability
+    crossover_prob, mutation_prob = 0.8, 0.15       # initialize probability
     # population = initialize_population(100)       # initialize population
     population = initialize_population(10)
 
     # generation phase
     # while generation < 50:
-    while generation < 500:
+    while generation < 100:
         # evaluation process
         population_score = evaluate(population)  # evaluate population by giving each chromosome a score
         print("original population score", population_score)
 
         # selection of parents chromosome process
         parent1_ind, parent2_ind = selection(population_score)
-        parent_population = population[parent1_ind-1]+population[parent2_ind-1]
-        print(parent_population)
+        parent_population = [population[parent1_ind-1], population[parent2_ind-1]]
+        # print(parent_population)
 
-        # crossover process
-        crossover_prob = 0
-        # child_population = parent_population
+        # genetic process
+        crossover_prob = mutation_prob = 0
         if random.uniform(0, 1) >= crossover_prob:  #crossover determination
             child_population = crossover(parent1_ind-1, parent2_ind-1, population)  #crossover step
-            child_population_score = evaluate(child_population) #evaluate child chromosomes
-            print('child score', child_population_score)
-        if random.uniform(0, 1) >= mutation_prob:
-            mutate(child_population[0])
-            mutate(child_population[1])
+            if random.uniform(0, 1) >= mutation_prob:
+                mutation(child_population[0])
+                mutation(child_population[1])
 
+        # evaluation process
+        parent_score = evaluate(parent_population)
+        child_score = evaluate(child_population)
+        print(parent_score)
+        print(child_score)
 
-            for child_ind, child in enumerate(child_population_score):    #traverse and check each child chromosome
-                _, score = child
-                max_ind, max_val = max(population_score, key=lambda tup: tup[1])    #find the maximum penalty score from population
-                print('max', max_ind, max_val)
-                if max_val > score: #if the maximum penalty score in population is higher than child penalty score then swap the child into population
-                    print('changed')
-                    population[max_ind-1] = child_population[child_ind]
-                    population_score[max_ind-1] = (max_ind, child_population_score[child_ind][1])
-            print('new population', population_score)
 
 
         generation += 1

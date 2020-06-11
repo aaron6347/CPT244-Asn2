@@ -49,11 +49,11 @@ def initialize_population(size):
         rand.shuffle(ranslots)
         for present in staff_to_presentation:
             slot = ranslots.pop()
-            # staff_slots = []
-            # for staff in present.staff:
-            #     staff_slots = staff_slots + unavailable_staff[staff - 1]
-            # while slot in staff_slots or slot in unavailable_timeslot:
-            #     slot = ranslots.pop()
+            staff_slots = []
+            for staff in present.staff:
+                staff_slots = staff_slots + unavailable_staff[staff - 1]
+            while slot in staff_slots or slot in unavailable_timeslot:
+                slot = ranslots.pop()
 
             chromosome.append([present, slot])
             # print(len(ranslots), 'here')
@@ -139,23 +139,23 @@ def tournament_selection(population):
 # Modified Combination of Row_reselect, Column_reselect
 def mutate(chromosome):
     global unavailable_staff, unavailable_timeslot
-
-    booked_slots = [x[1] for x in chromosome]
-    # print(booked_slots)
-    # print(len(set(booked_slots)))
-    ranslots = [x for x in list(range(1, 300)) if x not in set(booked_slots)]
-    # print(ranslots)
-    index = rand.randint(0, len(chromosome) - 1)
+    ranslots = list(range(1, 300))
+    index_list = list(range(0, len(chromosome) - 1))
     rand.shuffle(ranslots)
+    rand.shuffle(index_list)
     ran_slot = ranslots.pop()
+    index = index_list.pop()
     staff_slots = []
     # booked_timeslots = [x[1] for x in chromosome]
     for staff in chromosome[index][0].staff:
         staff_slots = staff_slots + unavailable_staff[staff - 1]
     while ran_slot in staff_slots or ran_slot in unavailable_timeslot:
+        index = index_list.pop()
         ran_slot = ranslots.pop()
 
     chromosome[index][1] = ran_slot
+    if check_venue_conflict(chromosome):
+        conflict_repair(chromosome)
 
 
 def crossover(p1, p2):
@@ -195,9 +195,9 @@ def genetic_algorithm():
                 if check_venue_conflict(child2):
                     conflict_repair(child2)
 
-            if rand.uniform(0, 1) >= mutation_prob:
-                mutate(child1)
-                mutate(child2)
+            # if rand.uniform(0, 1) >= mutation_prob:
+            #     mutate(child1)
+            #     mutate(child2)
 
             if evaluate(child1) <= evaluate(parent1):
                 child_population.append(child1)

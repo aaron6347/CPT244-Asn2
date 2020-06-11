@@ -10,3 +10,7 @@ print(a)
 
 a=[(1,1),(2,0)]
 print(min(a, key=lambda tup: tup[1]))
+
+a = random.choice((0,1))
+for x in range(10):
+    print(random.choice((0,1)))
