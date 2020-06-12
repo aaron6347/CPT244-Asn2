@@ -98,6 +98,33 @@ for _, timeslot in {"a": [1, 16, 31, 46, 76, 61], "b": [2, 18, 33, 3, 62, 47, 15
                     found.append(finding)
                     score += 1000
                 checked.append(finding)
+# print(score)
+# print(found)
+print('--------------')
+score = 0
+for _, timeslot in {"a": [1, 20, 16, 31, 46, 76, 61, 32, 3, 13, 12, 14, 15, 9, 10, 11], "b": [2, 18, 33, 3, 62, 47, 15]}.items():  # traverse and check each staff
+    checked = []  # to store time that has been checked
+    for each in sorted(timeslot):  # traverse and check each timeslot
+        if each not in checked:  # if the timeslot hasn't been check yet
+            checked.append(each)
+            primary = each % 15
+            if primary == 0:
+                primary = 15
+            if primary >= 12:   #starting from 12th time period, there wont be breaking the staff preference limit
+                continue
+            base = each // 61
+            n = 1  # increment for 16 to find consecutive presentation
+            while True:
+                next_time = [primary + n + 60 * base + 15 * x for x in range(4)]    #all possible next consecutive presentation timeslot
+                if any(time in timeslot and time not in checked for time in next_time): #if any next consecutive timeslot exist in staff's schedule
+                    checked += next_time
+                    if n > 3:   #if the consecutive has reach more than staff's preference in number of consecutive presentation
+                        score += 10
+                    if primary + n + 60 * base == 15:   #if the consecutive has reach end of day time period
+                        break
+                    else:
+                        n += 1  # increment n to look for next consecutive presentation timeslot
+                else:   #if none next consecutive timeslot exist in staff's schedule then drop the consecutive count
+                    break
 
 print(score)
-print(found)

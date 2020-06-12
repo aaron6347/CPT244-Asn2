@@ -1,11 +1,34 @@
 """testing3.py
     Created by Aaron at 11-Jun-20"""
 import csv
-import pprint
 import copy
 import random
-from Models import *
-import collections
+import math
+
+# Presentation class
+class Presentation:
+    presentation = None
+
+    def __init__(self, name, staff):
+        self.name = name
+        self.staff = staff
+
+    @staticmethod
+    def searchPreset(name):
+        for i in range(len(Presentation.presentation)):
+            if Presentation.presentation[i].name == name:
+                return i
+        return -1
+
+    @staticmethod
+    def searchStaff(name):
+        for i in range(len(Presentation.presentation)):
+            if name in Presentation.presentation[i].staff:
+                return i
+        return -1
+
+    def __repr__(self):
+        return "Presentation: {} by Staff1: {}, Staff2: {}, Staff3: {}".format(self.name, self.staff[0], self.staff[1], self.staff[2])
 
 # Mapping of codes to numbers for easy processing
 staff_code_to_num = {"S{:03d}".format(i + 1): i + 1 for i in range(47)}
@@ -38,6 +61,12 @@ with open('data/SC03.csv', 'r') as file:
     reader = csv.reader(file)
     sc03_csv = [pref for _, pref in reader]
 
+# function to return key for any value
+def get_key(val, my_dict):
+    for key, value in my_dict.items():
+        if val == value:
+            return key
+
 def initialize_population(size):
     """generate population function"""
     population = []
@@ -57,10 +86,11 @@ def hc02(staff_timeslot):
         checked = []
         for each in timeslot:
             if each not in checked:
+                checked.append(each)
                 primary = each % 15
                 if primary == 0:
                     primary = 15
-                base = int(each / 61)
+                base = each // 61
                 same_time = [primary + 60 * base + 15 * x for x in range(4)]
                 for finding in same_time:
                     if finding in timeslot and finding != each and finding not in checked:
@@ -71,8 +101,7 @@ def hc02(staff_timeslot):
 def hc03(chromosome):
     """check selected timeslot with venue unavailability function"""
     score = 0
-    for group in chromosome:    #traverse and check each chromosome
-        _,timeslot = group
+    for _,timeslot in chromosome:    #traverse and check each chromosome
         if timeslot in unavailable_timeslot:    #if current selected timeslot clash with venue unavailability then give penalty
             score += 1000
     return score
@@ -90,20 +119,31 @@ def sc01(staff_timeslot):
     """check staff with consecutive presentation"""
     score = 0
     for _, timeslot in staff_timeslot.items():  # traverse and check each staff
-        checked = []    #to store time that has been checked
-        # print(_, timeslot, score)
-        for each in timeslot:   #traverse and check each timeslot
-            if each not in checked: #if the timeslot hasn't been check yet
-                n = 0   #increment for 16 to find consecutive presentation
+        checked = []  # to store time that has been checked
+        for each in sorted(timeslot):  # traverse and check each timeslot
+            if each not in checked:  # if the timeslot hasn't been check yet
+                primary = each % 15
+                if primary == 0:
+                    primary = 15
+                    checked.append(each)
+                if primary >= 12:  # starting from 12th time period, there wont be breaking the staff preference limit
+                    continue
+                base = each // 61
+                n = 1  # increment for 16 to find consecutive presentation
                 while True:
-                    time = each + (16 * n)  #next consecutive presentation timeslot
-                    if time in timeslot:    #if next consecutive presentation timeslot exist in timeslot then record as checked
-                        checked.append(time)
-                        if n > 3:   #if the consecutive has been more than 4 times then give penalty
+                    next_time = [primary + n + 60 * base + 15 * x for x in
+                                 range(4)]  # all possible next consecutive presentation timeslot
+                    if any(time in timeslot and time not in checked for time in
+                           next_time):  # if any next consecutive timeslot exist in staff's schedule
+                        checked += next_time
+                        if n > 3:  # if the consecutive has reach more than staff's preference in number of consecutive presentation
                             score += 10
-                    else:   #if the next consecutive presentation timeslot doesn't exist in timeslot then break loop
+                        if primary + n + 60 * base == 15:  # if the consecutive has reach end of day time period
+                            break
+                        else:
+                            n += 1  # increment n to look for next consecutive presentation timeslot
+                    else:  # if none next consecutive timeslot exist in staff's schedule then drop the consecutive count
                         break
-                    n += 1  #increment n to look for next consecutive presentation timeslot
     return score
 
 def sc02(staff_timeslot):
@@ -122,7 +162,6 @@ def sc02(staff_timeslot):
                 day_counter["Thursday"] += 1
             else:
                 day_counter["Friday"] += 1
-        # print(day_counter)
         for _ in range(2):  #find the 2 lowest presentation days to use as penalty
             min_val = min(day_counter.values())
             min_day = min(day_counter.keys(), key=lambda x: day_counter[x])
@@ -147,7 +186,6 @@ def sc03(staff_timeslot):
                     venue_counter["IR"] += 1
                 else:
                     venue_counter["BJIM"] += 1
-            # print(venue_counter)
             max_venue = max(venue_counter.keys(), key=lambda x: venue_counter[x])   #find the most presentation taking place venue
             venue_counter.pop(max_venue)    #pop out the most presentation taking place venue
             score += sum(venue_counter.values()) * 10    #all presentations that is not in most presentation taking place venue will be used as penalty
@@ -242,10 +280,6 @@ def crossover(parent1_ind, parent2_ind, population):
     for x in range(118):
         result1.append([population[parent1_ind][x][0], child1[x]])
         result2.append([population[parent1_ind][x][0], child2[x]])
-    # print(child1)
-    # print(child2)
-    # print('res1', result1)
-    # print('res2', result2)
     return result1, result2
 
 def mutation(chromosome):
@@ -269,14 +303,14 @@ def genetic_algorithm():
     # initialization phase
     generation = 0  #initialize generation
     crossover_prob, mutation_prob = 0.8, 0.15       # initialize probability
-    population = initialize_population(100)       # initialize population
+    population = initialize_population(300)       # initialize population
 
     # evaluation process (making the first one outside so it wont generate twice)
     population_score = evaluate(population)  # evaluate population by giving each chromosome a score
     print("original population score", population_score)
 
     # generation phase
-    while generation < 60:
+    while generation < 100:
         next_population = []
         # take 90% of result from parent with children in each generation
         while len(next_population) < int(len(population) * (1.0 - (10 / 100))):
@@ -332,6 +366,47 @@ def genetic_algorithm():
         generation += 1
 
     print("Best score: ")
-    print(min(population_score, key=lambda tup: tup[1]))
+    # print(min(population_score, key=lambda tup: tup[1]))
+    best_score = min(population_score, key=lambda tup: tup[1])
+    print(best_score)
+    best_solution = population[best_score[0]]
+    return best_solution
 
-genetic_algorithm()
+best = genetic_algorithm()
+# print(best)
+existed_timeslot = [x[1] for x in best]
+# print(len(set(existed_timeslot)))
+best_timeslot_arrangement = [[None for i in range(17)] for j in range(20)]   # making initial list of timeslot with none values
+# print(best_timeslot_arrangement)
+for i in best:
+    best_timeslot_arrangement[math.ceil(i[1]/15) - 1][16 if (i[1]) % 15 == 0 else (i[1] % 15) + 1] = get_key(i[0].name, presentation_code_to_num)   # putting appropriate presentation at the approroite timeslot
+
+for i in range(len(best_timeslot_arrangement)):
+    if i <= 3:
+        best_timeslot_arrangement[i][0] = 'Monday'
+    elif 3 <= i <= 7:
+        best_timeslot_arrangement[i][0] = 'Tuesday'
+    elif 7 <= i <= 11:
+        best_timeslot_arrangement[i][0] = 'Wednesday'
+    elif 11 <= i <= 15:
+        best_timeslot_arrangement[i][0] = 'Thursday'
+    elif 15 <= i <= 19:
+        best_timeslot_arrangement[i][0] = 'Friday'
+
+    if i % 4 == 0:
+        best_timeslot_arrangement[i][1] = 'Viva Room, Level 7'
+    elif i % 4 == 1:
+        best_timeslot_arrangement[i][1] = 'Meeting Room, Level 7'
+    elif i % 4 == 2:
+        best_timeslot_arrangement[i][1] = 'Interaction Room, Level 7'
+    elif i % 4 == 3:
+        best_timeslot_arrangement[i][1] = 'BJIM Discussion Room, Level 5'
+
+    # print(best_timeslot_arrangement[i])
+# print(best_timeslot_arrangement)
+
+
+with open("data/results.csv", 'w', newline='') as file:     # writing in the csv file
+    writer = csv.writer(file)
+    writer.writerow(["Days", "Venue", "0900-0930", "0930-1000", "1000-1030", "1030-1100", "1100-1130", "1130-1200", "1200-1230", "1230-1300", "1400-1430", "1430-1500", "1500-1530", "1530-1600", "1600-1630", "1630-1700", "1700-1730"])
+    writer.writerows(best_timeslot_arrangement)
