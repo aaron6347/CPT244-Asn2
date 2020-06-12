@@ -127,4 +127,13 @@ for _, timeslot in {"a": [1, 20, 16, 31, 46, 76, 61, 32, 3, 13, 12, 14, 15, 9, 1
                 else:   #if none next consecutive timeslot exist in staff's schedule then drop the consecutive count
                     break
 
-print(score)
+
+# read HC03.csv for venue unavailability
+unavailable_timeslot = []
+with open('data/HC03.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        for x in set(row):
+            if str(x).isnumeric():
+                unavailable_timeslot.append(x)
+print(unavailable_timeslot)

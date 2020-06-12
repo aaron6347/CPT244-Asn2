@@ -47,9 +47,13 @@ staff_to_presentation = Presentation.presentation = [Presentation(presentation_c
                                                                    staff_code_to_num[j[3]]]) for j in SupExaAssign]
 
 # read HC03.csv for venue unavailability
+unavailable_timeslot = []
 with open('data/HC03.csv', 'r') as file:
     reader = csv.reader(file)
-    unavailable_timeslot = [[x for x in set(row) if str(x).isnumeric()] for row in reader]
+    for row in reader:
+        for x in set(row):
+            if str(x).isnumeric():
+                unavailable_timeslot.append(int(x))
 
 # read HC04.csv for staff unavailability
 with open('data/HC04.csv', 'r') as file:
@@ -101,7 +105,7 @@ def hc02(staff_timeslot):
 def hc03(chromosome):
     """check selected timeslot with venue unavailability function"""
     score = 0
-    for _,timeslot in chromosome:    #traverse and check each chromosome
+    for _, timeslot in chromosome:    #traverse and check each chromosome
         if timeslot in unavailable_timeslot:    #if current selected timeslot clash with venue unavailability then give penalty
             score += 1000
     return score
@@ -204,7 +208,6 @@ def evaluate(population):
                 staff_timeslot[each] = staff_timeslot[each] + [timeslot]
 
         #check HCs and SCs
-        # print(staff_timeslot)
         score = hc02(staff_timeslot)    #check staff with concurrent presentation
         score += hc03(population[x])    #check current selected timeslot with venue unavailability
         score += hc04(population[x])    #check current selected timeslot with staff unavailability
@@ -310,7 +313,7 @@ def genetic_algorithm():
     print("original population score", population_score)
 
     # generation phase
-    while generation < 100:
+    while generation < 60:
         next_population = []
         # take 90% of result from parent with children in each generation
         while len(next_population) < int(len(population) * (1.0 - (10 / 100))):
@@ -366,10 +369,10 @@ def genetic_algorithm():
         generation += 1
 
     print("Best score: ")
-    # print(min(population_score, key=lambda tup: tup[1]))
     best_score = min(population_score, key=lambda tup: tup[1])
     print(best_score)
-    best_solution = population[best_score[0]]
+    best_solution = population[best_score[0]-1]
+    print(best_solution)
     return best_solution
 
 best = genetic_algorithm()
