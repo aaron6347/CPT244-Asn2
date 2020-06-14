@@ -30,7 +30,28 @@
       <recent name="C:\Users\Aaron\PycharmProjects\CPT244_Asn2\venv" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tetsting5">
+  <component name="RunManager" selected="Python.CPT244_140659_142413_P01">
+    <configuration name="CPT244_140659_142413_P01" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="CPT244_Asn2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/CPT244_140659_142413_P01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CPT244_Asn2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -52,7 +73,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testing2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="testing6" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CPT244_Asn2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -64,7 +85,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/testing2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/testing6.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -73,7 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testing3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tetsting5 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CPT244_Asn2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,32 +102,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/testing3.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="testing4" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CPT244_Asn2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/testing4.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/tetsting5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,18 +138,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.testing2" />
-      <item itemvalue="Python.testing3" />
-      <item itemvalue="Python.testing4" />
       <item itemvalue="Python.tetsting5" />
+      <item itemvalue="Python.testing6" />
+      <item itemvalue="Python.tetsting5 (1)" />
+      <item itemvalue="Python.CPT244_140659_142413_P01" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.CPT244_140659_142413_P01" />
+        <item itemvalue="Python.testing6" />
         <item itemvalue="Python.tetsting5" />
+        <item itemvalue="Python.tetsting5 (1)" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.testing4" />
-        <item itemvalue="Python.testing3" />
-        <item itemvalue="Python.testing2" />
       </list>
     </recent_temporary>
   </component>
@@ -191,22 +191,22 @@
       <screen x="0" y="40" width="1536" height="824" />
     </state>
     <state x="549" y="207" key="FileChooserDialogImpl/0.40.1536.824@0.40.1536.824" timestamp="1591711581322" />
-    <state width="1492" height="252" key="GridCell.Tab.0.bottom" timestamp="1591982105455">
+    <state width="1492" height="225" key="GridCell.Tab.0.bottom" timestamp="1592126476863">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1492" height="252" key="GridCell.Tab.0.bottom/0.40.1536.824@0.40.1536.824" timestamp="1591982105455" />
-    <state width="1492" height="252" key="GridCell.Tab.0.center" timestamp="1591982105455">
+    <state width="1492" height="225" key="GridCell.Tab.0.bottom/0.40.1536.824@0.40.1536.824" timestamp="1592126476863" />
+    <state width="1492" height="225" key="GridCell.Tab.0.center" timestamp="1592126476863">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1492" height="252" key="GridCell.Tab.0.center/0.40.1536.824@0.40.1536.824" timestamp="1591982105455" />
-    <state width="1492" height="252" key="GridCell.Tab.0.left" timestamp="1591982105455">
+    <state width="1492" height="225" key="GridCell.Tab.0.center/0.40.1536.824@0.40.1536.824" timestamp="1592126476863" />
+    <state width="1492" height="225" key="GridCell.Tab.0.left" timestamp="1592126476863">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1492" height="252" key="GridCell.Tab.0.left/0.40.1536.824@0.40.1536.824" timestamp="1591982105455" />
-    <state width="1492" height="252" key="GridCell.Tab.0.right" timestamp="1591982105455">
+    <state width="1492" height="225" key="GridCell.Tab.0.left/0.40.1536.824@0.40.1536.824" timestamp="1592126476863" />
+    <state width="1492" height="225" key="GridCell.Tab.0.right" timestamp="1592126476863">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1492" height="252" key="GridCell.Tab.0.right/0.40.1536.824@0.40.1536.824" timestamp="1591982105455" />
+    <state width="1492" height="225" key="GridCell.Tab.0.right/0.40.1536.824@0.40.1536.824" timestamp="1592126476863" />
     <state x="277" y="94" key="SettingsEditor" timestamp="1591857532179">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
@@ -215,9 +215,13 @@
       <screen x="0" y="40" width="1536" height="824" />
     </state>
     <state x="93" y="133" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.40.1536.824@0.40.1536.824" timestamp="1591866792210" />
-    <state x="444" y="276" key="com.intellij.ide.util.TipDialog" timestamp="1591981515626">
+    <state x="731" y="137" key="com.intellij.ide.util.TipDialog" timestamp="1592125189776">
       <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state x="444" y="276" key="com.intellij.ide.util.TipDialog/0.40.1536.824@0.40.1536.824" timestamp="1591981515626" />
+    <state x="731" y="137" key="com.intellij.ide.util.TipDialog/0.40.1536.824@0.40.1536.824" timestamp="1592125189776" />
+    <state x="431" y="185" width="672" height="678" key="search.everywhere.popup" timestamp="1592016734759">
+      <screen x="0" y="40" width="1536" height="824" />
+    </state>
+    <state x="431" y="185" width="672" height="678" key="search.everywhere.popup/0.40.1536.824@0.40.1536.824" timestamp="1592016734759" />
   </component>
 </project>
